@@ -1,7 +1,6 @@
 import requests
 import json
 
-# link = "https://fb.watch/iNjp9wReOZ/"
 def facebook(linkf):
     url = "https://facebook-reel-and-video-downloader.p.rapidapi.com/app/main.php"
 
@@ -15,24 +14,8 @@ def facebook(linkf):
     response = requests.request("GET", url, headers=headers, params=querystring)
     natija5 = json.loads(response.text)
 
-
-    #
-    #
     if 'error' in natija5:
         return 'bed'
     else:
         return natija5['links']['Download High Quality']
-        # for i in natija5['formats']:
-        #     if i['ext'] == 'mp4' and i['quality'] == 0:
-        #         return i['url']
-
-    #
-
-
-
-
-
-
-
-
-# print(facebook(link))
+      
